@@ -1,4 +1,4 @@
-# clone repo: git clone https://github.com/rafaeltuvera/playwright-bdd.git
+clone repo: git clone https://github.com/rafaeltuvera/playwright-bdd.git
 
 npm install to install dependencies \
 npm run test - runs all tests \
