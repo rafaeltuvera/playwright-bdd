@@ -58,22 +58,24 @@ export class CreateDucatiPage {
       };
       
       
-
-
       async goto (){
         await this.page.goto('/create', {waitUntil: 'domcontentloaded'})
-    }
+      }
 
 
       async checkCreateButtonisSelected(expectedClass = /underline/) {
         await expect(this.elements.buttons.create()).toHaveClass(expectedClass);
       }
 
+       /**
+       * @param {string} buttonName - The name of the 'generate' button to be clicked.
+       */
       async generateImage (buttonName: string){
         await this.page.getByRole('textbox', {name: this.elements.descriptionInput}).fill(`${faker.vehicle.manufacturer()} collab`);
         await this.elements.buttons.generate(buttonName).click()
       }
 
+      // validate generated images are visible
       async validateAllImagesAreVisible() {
         let images = this.elements.generatedImages.images();
         for (const [index ,image] of (await images.all()).entries() ){
