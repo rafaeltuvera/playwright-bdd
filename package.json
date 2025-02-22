@@ -1,0 +1,26 @@
+{
+  "name": "pw-bdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx bddgen && npx playwright test",
+    "test:headed": "npx bddgen && npx playwright test --headed",
+    "test:e2e": "npx bddgen && npx playwright test --grep @e2e",
+    "test:smoke": "npx bddgen && npx playwright test --grep @smoke",
+    "report": "npx playwright show-report "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@faker-js/faker": "^9.5.0",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4",
+    "playwright-bdd": "^8.2.0"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
